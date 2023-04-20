@@ -32,41 +32,41 @@ class OrdenAscendente : public Orden
 {
 public:
     void Ordenar(std::vector<int>);
-    //void Ordenar(void);
+};
+
+class OrdenDescendente : public Orden
+{
+public:
+    void Ordenar(std::vector<int>);
 };
 
 int main(void)
 {
-    
+    //Dado que usamos rand() en la creacion del arreglo, seteamos nueva semilla
     time_t current_time = time(NULL);
     srand((unsigned)time(NULL));
 
     int longitud_arreglo;
 
-    std::cout << "Ingrese la  longitud del arreglo a ordenar: ";
+    std::cout << "Ingrese la longitud del arreglo a ordenar: ";
     std::cin >> longitud_arreglo;
+    std::cout << std::endl;
 
     Cliente nuevoCliente(longitud_arreglo);
 
-    /* nuevoCliente.MostrarArreglo(); */
+    OrdenAscendente nuevoOrdenAs;
+    OrdenDescendente nuevoOrdenDes;
 
-    
+    nuevoOrdenAs.Ordenar(*nuevoCliente.ObtenerArreglo());
 
-    /*
-    std::vector<int> * aux = nuevoCliente.ObtenerArreglo();
+    std::cout << std::endl;
 
-    for (int i=0 ; i<longitud_arreglo;i++)
-    {
-        std::cout << (*aux)[i] << std::endl;
-    }
-    */
+    nuevoOrdenDes.Ordenar(*nuevoCliente.ObtenerArreglo());
 
-    OrdenAscendente nuevoOrden;
-    /* nuevoOrden.Ordenar(); */
-    nuevoOrden.Ordenar(*nuevoCliente.ObtenerArreglo());
+    std::cout << std::endl;
+
     return 0;
 };
-
 
 void Cliente::MostrarArreglo(void)
 {
@@ -78,18 +78,25 @@ void Cliente::MostrarArreglo(void)
     std::cout << "]";
 }
 
+std::vector<int> *Cliente::ObtenerArreglo(void)
+{
+    return &arreglo;
+}
 
 void OrdenAscendente::Ordenar(std::vector<int> arreglo)
 {
     
-    int i, j, temp, pass = 0;
-    //int a[10] = {10, 2, 0, 14, 43, 25, 18, 1, 5, 45};
-    std::cout << "Input list ...\n";
+    int i, j, temp = 0;
+    
+    std::cout << "El arreglo a ordenar es:" << std::endl;
+    
     for (i = 0; i < arreglo.size(); i++)
     {
         std::cout << arreglo[i] << "\t";
     }
+
     std::cout << std::endl;
+
     for (i = 0; i < arreglo.size(); i++)
     {
         for (j = i + 1; j < arreglo.size(); j++)
@@ -101,27 +108,51 @@ void OrdenAscendente::Ordenar(std::vector<int> arreglo)
                 arreglo[j] = temp;
             }
         }
-        pass++;
     }
-    std::cout << "Sorted Element List ...\n";
+
+    std::cout << "El arreglo ordenado de forma ascendente es:" << std::endl;
+    
     for (i = 0; i < arreglo.size(); i++)
     {
         std::cout << arreglo[i] << "\t";
     }
-    std::cout << "\nNumber of passes taken to sort the list:" << pass << std::endl;
+
+    std::cout << std::endl;
+}
+
+void OrdenDescendente::Ordenar(std::vector<int> arreglo)
+{
     
-   //std::cout  << "OrdenAscendente" << std::endl;
+    int i, j, temp = 0;
+    
+    std::cout << "El arreglo a ordenar es:" << std::endl;
+    
+    for (i = 0; i < arreglo.size(); i++)
+    {
+        std::cout << arreglo[i] << "\t";
+    }
+
+    std::cout << std::endl;
+
+    for (i = 0; i < arreglo.size(); i++)
+    {
+        for (j = i + 1; j < arreglo.size(); j++)
+        {
+            if (arreglo[i] < arreglo[j])
+            {
+                temp = arreglo[i];
+                arreglo[i] = arreglo[j];
+                arreglo[j] = temp;
+            }
+        }
+    }
+
+    std::cout << "El arreglo ordenado de forma descendente es:" << std::endl;
+    
+    for (i = 0; i < arreglo.size(); i++)
+    {
+        std::cout << arreglo[i] << "\t";
+    }
+
+    std::cout << std::endl;
 }
-
-
-
-std::vector<int> *Cliente::ObtenerArreglo(void)
-{
-    return &arreglo;
-}
-
-
-/* void OrdenAscendente::Ordenar(void)
-{
-    std::cout << "Correcto";
-} */
