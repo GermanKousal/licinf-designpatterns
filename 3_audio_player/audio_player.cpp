@@ -23,11 +23,7 @@ private:
 int main(void)
 {
     ReproductorSonido nuevo_reproductor;
-    ReproductorSonido nuevo_reproductor2;
-    
-    //falta manejar la excepcion
-
-    
+    ReproductorSonido nuevo_reproductor2; // falta manejar la excepcion
 
     return 0;
 }
