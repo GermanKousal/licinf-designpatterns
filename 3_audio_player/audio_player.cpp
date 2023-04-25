@@ -8,6 +8,7 @@
 class ReproductorSonido
 {
 public:
+    ReproductorSonido(void);
     void agregarArchivoSonido(std::string);
     void stop(void);
     void play(void);
@@ -16,13 +17,35 @@ public:
 private:
     std::vector<std::string> canciones;
     std::string actual;
+    static bool existe;
 };
 
 int main(void)
 {
     ReproductorSonido nuevo_reproductor;
+    ReproductorSonido nuevo_reproductor2;
+    
+    //falta manejar la excepcion
+
+    
+
     return 0;
 }
+
+ReproductorSonido::ReproductorSonido(void)
+{
+    if (!existe)
+    {
+        existe = true;
+        std::cout << "Reproductor de Sonido creado." << std::endl;
+    }
+    else
+    {
+        throw std::logic_error("Ya existe un reproductor");
+    }
+}
+
+bool ReproductorSonido::existe = false;
 
 void ReproductorSonido::agregarArchivoSonido(std::string cancion)
 {
