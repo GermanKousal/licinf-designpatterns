@@ -1,6 +1,3 @@
-#ifndef CLIENTE_CPP
-#define CLIENTE_CPP
-
 #include "Cliente.h"
 
 void Cliente::MostrarArreglo(void)
@@ -17,5 +14,3 @@ std::vector<int> *Cliente::ObtenerArreglo(void)
 {
     return &arreglo;
 }
-
-#endif // CLIENTE_CPP

@@ -1,10 +1,7 @@
 // TP1
 // Punto 1
 
-#include "stdincludes.h"
-#include "Cliente.cpp"
-#include "Orden.cpp"
-
+#include "tp1_p1/tp1_p1.h"
 
 int main(void)
 {

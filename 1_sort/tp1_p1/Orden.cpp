@@ -1,15 +1,12 @@
-#ifndef ORDEN_CPP
-#define ORDEN_CPP
-
 #include "Orden.h"
 
 void OrdenAscendente::Ordenar(std::vector<int> arreglo)
 {
-    
+
     int i, j, temp = 0;
-    
+
     std::cout << "El arreglo a ordenar es:" << std::endl;
-    
+
     for (i = 0; i < arreglo.size(); i++)
     {
         std::cout << arreglo[i] << "\t";
@@ -31,7 +28,7 @@ void OrdenAscendente::Ordenar(std::vector<int> arreglo)
     }
 
     std::cout << "El arreglo ordenado de forma ascendente es:" << std::endl;
-    
+
     for (i = 0; i < arreglo.size(); i++)
     {
         std::cout << arreglo[i] << "\t";
@@ -42,11 +39,11 @@ void OrdenAscendente::Ordenar(std::vector<int> arreglo)
 
 void OrdenDescendente::Ordenar(std::vector<int> arreglo)
 {
-    
+
     int i, j, temp = 0;
-    
+
     std::cout << "El arreglo a ordenar es:" << std::endl;
-    
+
     for (i = 0; i < arreglo.size(); i++)
     {
         std::cout << arreglo[i] << "\t";
@@ -68,7 +65,7 @@ void OrdenDescendente::Ordenar(std::vector<int> arreglo)
     }
 
     std::cout << "El arreglo ordenado de forma descendente es:" << std::endl;
-    
+
     for (i = 0; i < arreglo.size(); i++)
     {
         std::cout << arreglo[i] << "\t";
@@ -76,5 +73,3 @@ void OrdenDescendente::Ordenar(std::vector<int> arreglo)
 
     std::cout << std::endl;
 }
-
-#endif // ORDEN_CPP
