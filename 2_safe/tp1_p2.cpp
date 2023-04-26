@@ -6,5 +6,8 @@
 int main(void)
 {
 
+    CajaFuerte caja_fuerte;
+    caja_fuerte.configurar();
+    
     return 0;
 };
