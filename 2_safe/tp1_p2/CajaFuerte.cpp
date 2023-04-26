@@ -43,8 +43,24 @@ void CajaFuerte::desactivar(void)
 
 void CajaFuerte::activar(void)
 {
-    // OJO! falta implementacion
-    estado = 2;
+    switch (estado)
+    {
+    case 1:
+        // desactivado -> activado
+        estado = 2; // pasa a estado activado
+        std::cout << "Desactivado -> Activado" << std::endl;
+        break;
+    case 2:
+        // activado -> activado
+        std::cout << "CajaFuerte ya esta activada" << std::endl;
+        break;
+    case 3:
+        // configuracion -> activado
+        estado = 2; // pasa a estado activado
+        std::cout << "Configuracion -> Activado" << std::endl;
+        break;
+    default:; // Sin implementacion
+    }
 }
 
 void CajaFuerte::configurar(void)

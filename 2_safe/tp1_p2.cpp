@@ -7,9 +7,18 @@ int main(void)
 {
 
     CajaFuerte caja_fuerte;
+
     caja_fuerte.configurar();
     caja_fuerte.configurar();
+
     caja_fuerte.desactivar();
+    caja_fuerte.desactivar();
+
+    caja_fuerte.activar();
+    caja_fuerte.activar();
+
+    caja_fuerte.desactivar();
+    caja_fuerte.configurar();
     caja_fuerte.activar();
     caja_fuerte.desactivar();
 
