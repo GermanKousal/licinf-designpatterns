@@ -1,10 +1,6 @@
 #ifndef CLIENTE_CPP
 #define CLIENTE_CPP
 
-#include <vector>
-#include <iostream>
-#include <string>
-
 #include "Cliente.h"
 
 void Cliente::MostrarArreglo(void)

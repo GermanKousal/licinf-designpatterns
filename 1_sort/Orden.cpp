@@ -2,7 +2,6 @@
 #define ORDEN_CPP
 
 #include "Orden.h"
-#include <iostream>
 
 void OrdenAscendente::Ordenar(std::vector<int> arreglo)
 {

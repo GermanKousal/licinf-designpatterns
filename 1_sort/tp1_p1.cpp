@@ -1,13 +1,8 @@
 // TP1
 // Punto 1
-#include <iostream>
-#include <vector>
-#include <string>
 
-#include "Cliente.h"
+#include "stdincludes.h"
 #include "Cliente.cpp"
-
-#include "Orden.h"
 #include "Orden.cpp"
 
 
