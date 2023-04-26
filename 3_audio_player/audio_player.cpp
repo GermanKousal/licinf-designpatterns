@@ -9,8 +9,16 @@
 
 int main(void)
 {
-    ReproductorSonido nuevo_reproductor;
-    ReproductorSonido nuevo_reproductor2; // falta manejar la excepcion
+    try
+    {
+        ReproductorSonido nuevo_reproductor;
+        ReproductorSonido nuevo_reproductor2; // falta manejar la excepcion
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 
+    std::cout << "Final" << std::endl;
     return 0;
 }
