@@ -4,23 +4,10 @@
 #include <vector>
 #include <string>
 
+#include "Cliente.h"
+#include "Cliente.cpp"
 
-class Cliente
-{
-public:
-    Cliente(int largo = 0) : arreglo(largo)
-    {
-        for (size_t i = 0; i < largo; i++)
-        {
-            arreglo[i] = rand() % 100;
-        }
-    };
-    void MostrarArreglo(void);
-    std::vector<int> *ObtenerArreglo(void);
 
-private:
-    std::vector<int> arreglo;
-};
 
 class Orden
 {
@@ -68,20 +55,6 @@ int main(void)
     return 0;
 };
 
-void Cliente::MostrarArreglo(void)
-{
-    std::cout << "El arreglo de Cliente es: [";
-    for (int i = 0; i < arreglo.size(); i++)
-    {
-        std::cout << std::to_string(arreglo[i]) + " ";
-    };
-    std::cout << "]";
-}
-
-std::vector<int> *Cliente::ObtenerArreglo(void)
-{
-    return &arreglo;
-}
 
 void OrdenAscendente::Ordenar(std::vector<int> arreglo)
 {
