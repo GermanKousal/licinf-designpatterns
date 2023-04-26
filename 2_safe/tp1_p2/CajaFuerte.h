@@ -12,8 +12,9 @@ public:
     void configurar(void);
 
 private:
-    short estado = 1;   //1 =: desactivada; 2 =: activada; 3=: configuracion 
+    short estado = 1; // 1 =: desactivada; 2 =: activada; 3 =: configuracion
     short codigo = 0;
+    void cambiarCodigo(void);
 };
 
 #endif // CAJAFUERTE_H
